@@ -6,7 +6,7 @@ import Link from 'next/link'
 const navigation = [
     { id:1, title: 'Home', path: '/'},
     { id:2, title: 'Portfolio', path: '/portfolio'},
-    { id:3, title: 'Blog2', path: '/posts'},
+    { id:3, title: 'Blog22', path: '/posts'},
 ]
 
 
