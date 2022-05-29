@@ -1,11 +1,16 @@
-import Head from 'next/head'
-import Image from 'next/image'
+import Head from "next/head";
+import Image from "next/image";
+import styles from "../styles/Home.module.css";
+import SmallSlider from "../Components/SmallSlider";
+import { useState } from "react";
 
 
 export default function Home() {
+  const [moveSlider, setMoveSlider] = useState(0);
   return (
-    <div>
-      Hello mothefuckers!
-    </div>
-  )
+    <>
+      <SmallSlider moveSlider={moveSlider} setMoveSlider={setMoveSlider}/>
+  
+    </>
+  );
 }
