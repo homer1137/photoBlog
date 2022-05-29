@@ -1,7 +1,7 @@
 import Head from "next/head";
 import Image from "next/image";
 import styles from "../styles/Home.module.css";
-import SmallSlider from "../components/smallSlider/SmallSlider";
+import SmallSlider from "../components/SmallSlider/SmallSlider";
 import { useState } from "react";
 
 
