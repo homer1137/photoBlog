@@ -8,11 +8,9 @@ import styles from "../../styles/Slider.module.css";
 
 export default function SmallSlider({ moveSlider, setMoveSlider }) {
   const sliderArray2 = sliderArray;
-  console.log({sliderArray2})
+  
   //движение стелками
-  const active2 = {
-    basis: true,
-  };
+  
   function moveRight() {
     if (moveSlider === 100 * (sliderArray2.length - 1)) {
       setMoveSlider((prev) => prev - 100 * (sliderArray2.length - 1));
@@ -73,69 +71,76 @@ export default function SmallSlider({ moveSlider, setMoveSlider }) {
   }
 
   return (
-    
-   
-     
-      
-      <div className={styles.sliderContainer}>
-      <div className={styles.sliderWindow}>  
-      <div
+    <div className={styles.sliderContainer}>
+      <div className={styles.sliderWindow}>
+        <div
           className={styles.sliderContainerRowWrapper}
-          style={{ width: `${sliderArray2.length*100+'%'}`}}
+          style={{
+            width: `${sliderArray2.length * 100 + "%"}`,
+            right: `${
+              state.isScrolling
+                ? moveSlider + state.scrollX + "%"
+                : moveSlider + "%"
+            }`,
+          }}
+          /* right: ${(props)=>{
+    if (props.state.isScrolling) {
+      return (props.state.isScrolling?props.moveSlider + props.state.scrollX + 'px':null)
+    } else return ((props) => props.moveSlider + "px")
+    }}; */
 
-          
           state={state}
-          
         >
           {sliderArray2.map((item) => (
             <div
-            className={styles.sliderContainerRow2}
-            
-            onPointerDown={(e) => onMouseDown1(e)}
-            onPointerUp={(e) => onMouseUp1(e)}
-            onPointerMove={(e) => onMouseMove1(e)}
-            onPointerLeave={(e) => onMouseUp1(e)}
-            key={item.title}
-          >
-              <div style={{width: '100%', height: '100vh'}}
+              className={styles.sliderContainerRow2}
+              onPointerDown={(e) => onMouseDown1(e)}
+              onPointerUp={(e) => onMouseUp1(e)}
+              onPointerMove={(e) => onMouseMove1(e)}
+              onPointerLeave={(e) => onMouseUp1(e)}
+              key={item.title}
+            >
+              <div style={{ width: "100%", height: "100vh" }}>
+                <Image
+                  src={item.picture}
+                  layout="fill"
+                  objectFit="cover"
+                  alt={"minimalism house"}
+                />
+              </div>
+              <div
+                style={{
+                  position: "absolute",
+                  top: "0",
+                  left: "0",
+                  zIndex: "15",
+                  width: "100%",
+                  height: "100%",
+                }}
               >
-              <Image
-                src={item.picture}
-                
-                layout="fill"
-                objectFit="cover"
-      
-                alt={"minimalism house"}
-              />
+                <h2>{item.title}</h2>
+                <div>{item.description}</div>
+                <button style={{ zIndex: "15" }}>Get more</button>
               </div>
-              <div style={{position: 'absolute', top: '0', left: '0', zIndex: '21'}}>
-              <h2>{item.title}</h2>
-              <button style={{zIndex: '12'}}>Get more</button>
-              </div>
-              
             </div>
           ))}
-
-          </div>
         </div>
-        <div className={styles.sliderContainerRow}>
+      </div>
+      <div className={styles.sliderContainerRow}>
         <IoChevronBack className={styles.arrow} onClick={moveLeft} />
         <ul className={styles.ulclass}>
           {sliderArray2.map((item, index) => (
-            <li
+            <li 
               className={styles.liStyled}
               key={item.title}
               onClick={() => setMoveSlider(100 * index)}
-              active2={
-                index === (moveSlider + 100) / 100 - 1 ? { active2 } : null
-              }
+              
+              style={{ backgroundColor: `${(index === (moveSlider + 100) / 100 - 1)? 'green':'coral'}`}}
             ></li>
           ))}
         </ul>
         <IoChevronForward className={styles.arrowright} onClick={moveRight} />
       </div>
-      </div>
-      
-    
+    </div>
   );
 }
