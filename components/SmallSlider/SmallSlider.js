@@ -83,15 +83,11 @@ export default function SmallSlider({ moveSlider, setMoveSlider }) {
                 : moveSlider + "%"
             }`,
           }}
-          /* right: ${(props)=>{
-    if (props.state.isScrolling) {
-      return (props.state.isScrolling?props.moveSlider + props.state.scrollX + 'px':null)
-    } else return ((props) => props.moveSlider + "px")
-    }}; */
+     
 
           state={state}
         >
-          {sliderArray2.map((item) => (
+          {sliderArray2.map((item, index) => (
             <div
               className={styles.sliderContainerRow2}
               onPointerDown={(e) => onMouseDown1(e)}
@@ -109,18 +105,14 @@ export default function SmallSlider({ moveSlider, setMoveSlider }) {
                 />
               </div>
               <div
-                style={{
-                  position: "absolute",
-                  top: "0",
-                  left: "0",
-                  zIndex: "15",
-                  width: "100%",
-                  height: "100%",
-                }}
+                className={styles.textContainer}
+                style={{ top: `${(index === (moveSlider + 100) / 100 - 1)? '50%':'70%'}`,
+                opacity: `${(index === (moveSlider + 100) / 100 - 1)? '1':'0'}`
+              }}
               >
                 <h2>{item.title}</h2>
                 <div>{item.description}</div>
-                <button style={{ zIndex: "15" }}>Get more</button>
+                <button style={{ zIndex: "18" }}>Get more</button>
               </div>
             </div>
           ))}
@@ -135,7 +127,7 @@ export default function SmallSlider({ moveSlider, setMoveSlider }) {
               key={item.title}
               onClick={() => setMoveSlider(100 * index)}
               
-              style={{ backgroundColor: `${(index === (moveSlider + 100) / 100 - 1)? 'green':'coral'}`}}
+              style={{ backgroundColor: `${(index === (moveSlider + 100) / 100 - 1)? 'white':''}`}}
             ></li>
           ))}
         </ul>
