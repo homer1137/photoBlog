@@ -83,7 +83,7 @@ export default function SmallSlider({ moveSlider, setMoveSlider }) {
           className={styles.sliderContainerRowWrapper}
           style={{ width: `${sliderArray2.length*100+'%'}`}}
 
-          moveSlider={moveSlider}
+          
           state={state}
           
         >
