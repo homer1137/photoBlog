@@ -8,9 +8,9 @@ import styles from "../../styles/Slider.module.css";
 
 export default function SmallSlider({ moveSlider, setMoveSlider }) {
   const sliderArray2 = sliderArray;
-  
+
   //движение стелками
-  
+
   function moveRight() {
     if (moveSlider === 100 * (sliderArray2.length - 1)) {
       setMoveSlider((prev) => prev - 100 * (sliderArray2.length - 1));
@@ -83,8 +83,6 @@ export default function SmallSlider({ moveSlider, setMoveSlider }) {
                 : moveSlider + "%"
             }`,
           }}
-     
-
           state={state}
         >
           {sliderArray2.map((item, index) => (
@@ -96,7 +94,16 @@ export default function SmallSlider({ moveSlider, setMoveSlider }) {
               onPointerLeave={(e) => onMouseUp1(e)}
               key={item.title}
             >
-              <div style={{ width: "100%", height: "100vh" }}>
+              <div
+                style={{
+                  width: "100%",
+                  height: "100vh",
+                  transition: '1s ease-out',
+                  opacity: `${
+                    index === (moveSlider + 100) / 100 - 1 ? "1" : "0.2"
+                  }`,
+                }}
+              >
                 <Image
                   src={item.picture}
                   layout="fill"
@@ -106,9 +113,14 @@ export default function SmallSlider({ moveSlider, setMoveSlider }) {
               </div>
               <div
                 className={styles.textContainer}
-                style={{ top: `${(index === (moveSlider + 100) / 100 - 1)? '50%':'70%'}`,
-                opacity: `${(index === (moveSlider + 100) / 100 - 1)? '1':'0'}`
-              }}
+                style={{
+                  top: `${
+                    index === (moveSlider + 100) / 100 - 1 ? "50%" : "70%"
+                  }`,
+                  opacity: `${
+                    index === (moveSlider + 100) / 100 - 1 ? "1" : "0"
+                  }`,
+                }}
               >
                 <h2>{item.title}</h2>
                 <div>{item.description}</div>
@@ -122,12 +134,15 @@ export default function SmallSlider({ moveSlider, setMoveSlider }) {
         <IoChevronBack className={styles.arrow} onClick={moveLeft} />
         <ul className={styles.ulclass}>
           {sliderArray2.map((item, index) => (
-            <li 
+            <li
               className={styles.liStyled}
               key={item.title}
               onClick={() => setMoveSlider(100 * index)}
-              
-              style={{ backgroundColor: `${(index === (moveSlider + 100) / 100 - 1)? 'white':''}`}}
+              style={{
+                backgroundColor: `${
+                  index === (moveSlider + 100) / 100 - 1 ? "white" : "rgba(0,0,0,0.1)"
+                }`,
+              }}
             ></li>
           ))}
         </ul>

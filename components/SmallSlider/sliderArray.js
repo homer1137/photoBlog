@@ -20,7 +20,13 @@ export const sliderArray = [
         picture: '/home/Photo_02.jpg',
         
     },
-    
+    {
+        id: 4,
+        title:  'Suessmanda2',
+        description: 'interestiong marsilllais',
+        picture: '/home/a98f96c8e05ca6ac50e4c49cc8f3b19c.jpg',
+        
+    },
     
 
 

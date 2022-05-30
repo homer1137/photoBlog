@@ -1,41 +1,114 @@
+.main {
+  text-shadow: 0px 0px 1px black;
+  display: flex;
+  font-weight: 700;
+  color: white;
+  font-size: 1.6rem;
+  justify-content: center;
+  position: relative;
+}
 
 
-.main{
-    
+.main2 {
     text-shadow: 0px 0px 1px black;
     display: flex;
-    max-width: 100%;
     font-weight: 700;
     color: white;
-    font-size: 22px;
-    margin-bottom: 50px;
+    font-size: 1.6rem;
     justify-content: center;
-    
-    
+    position: relative;
+  }
+
+.closeIcon {
+    display: none;
+
 }
 
 .main a {
+  margin-left: 25px;
+  margin-right: 25px;
+  cursor: pointer;
+}
+
+.main2 a {
     margin-left: 25px;
     margin-right: 25px;
     cursor: pointer;
-    
-    
-}
+  }
 
- @media (max-width: 768px) {
-    .main a {
+
+@media (max-width: 768px) {
+  .container {
+    position: absolute;
+    width: 100%;
+    z-index: -10;
+  }
+  .main {
+    position: relative;
+    max-width: 60%;
+    margin: 0 auto;
+    top: 200px;
+    left: 0px;
+    flex-direction: column;
+    border: 2px solid black;
+    border-radius: 15px;
+    padding: 5rem;
     
+
+    backdrop-filter: blur(5px);
+  }
+  .main2 {
+      display: none;
+      position: relative;
+    max-width: 60%;
+    margin: 0 auto;
+    top: 200px;
+    left: 0px;
+    flex-direction: column;
+    border: 2px solid black;
+    border-radius: 15px;
+    padding: 5rem;
+  }
+
+  .main  {
     align-items: space-between;
-    
-    }
+  }
+  .main a {
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .main2  {
+    align-items: space-between;
+  }
+  .main2 a {
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .closeIcon {
+    display: block;
+    position: absolute;
+    bottom: 85%;
+    left: 87%;
+    cursor: pointer;
+    height: 45px;
+    width: 45px;
+    color: white;
 }
-
-
-
-.main a:hover{
+.closeIcon :hover{
     color: rgb(168, 168, 168)
 }
+}
+
+.main a:hover {
+  color: rgb(168, 168, 168);
+}
+
+.main2 a:hover {
+    color: rgb(168, 168, 168);
+  }
 
 .active2 {
-    color: rgb(168, 168, 168)
+  color: rgb(168, 168, 168);
 }
+
+

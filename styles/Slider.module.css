@@ -41,7 +41,7 @@
   height: 100%;
   position: relative;
 
-  background-color: coral;
+  background-color: black;
 }
 
 .sliderColumnContainer {
@@ -118,6 +118,7 @@
   text-shadow: 0px 0px 1px black;
   user-select: none;
   z-index: 12;
+  transition-duration: 0.4s;
   
 }
 

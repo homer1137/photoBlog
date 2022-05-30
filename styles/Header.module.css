@@ -18,30 +18,44 @@
     
     
 }
+
+.hov2 {
+    display: none;
+    color: white;
+    
+}
+    
+.hov2:hover{
+    color: rgb(168, 168, 168)
+    
+}
+
  @media (max-width: 768px) {
     .container{ 
         padding-left: 10px;
         padding-right: 10px;
+    } 
+    .hov2{ 
+        display: block;
     } 
 }
 .main{
    
     
     display: flex;
-    max-width: 100%;
+    width: 100%;
     font-weight: 700;
     color: white;
     font-size: 22px;
     text-shadow: 0px 0px 1px black;
     justify-content: space-between;
     align-items: center;
-    
-    
+    position: relative;
+    padding: 10px;
 }
 
 .main div {
-    margin-top: 25px;
-    margin-bottom: 25px;
+    
     cursor: pointer;
     
     
@@ -50,18 +64,6 @@
 .hov :hover{
     color: rgb(168, 168, 168)
 }
-.hov2 {
-    display: none;
 
-}
-    
-.hov2:hover{
-    color: rgb(168, 168, 168)
-}
 
-@media (max-width: 768px) {
-    .hov2{ 
-        display: block;
-    } 
-}
 
