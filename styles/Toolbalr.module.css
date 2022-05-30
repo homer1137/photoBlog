@@ -87,8 +87,8 @@
   .closeIcon {
     display: block;
     position: absolute;
-    bottom: 85%;
-    left: 87%;
+    top: 5%;
+    right:5%;
     cursor: pointer;
     height: 45px;
     width: 45px;
