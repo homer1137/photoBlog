@@ -104,11 +104,12 @@ export default function SmallSlider({ moveSlider, setMoveSlider }) {
                   }`,
                 }}
               >
+              
                 <Image
                   src={item.picture}
                   layout="fill"
                   objectFit="cover"
-                  alt={"minimalism house"}
+                  alt={item.title}
                 />
               </div>
               <div
