@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import PortfolioPreview from "../../Components/PortfolioPreview";
+import PortfolioPreview from "../../components/PortfolioPreview";
 
 
 export default function Portfolio() {
