@@ -3,15 +3,17 @@ import Image from "next/image";
 
 import styles from "../../styles/PortfolioPreview.module.css";
 import { portfolioArray } from "./potfoloArray";
+import { useRouter } from "next/router";
 
 export default function PortfolioPreview() {
+    const router = useRouter();
   return (
     <>
       <div className={styles.container}>
-        <h2>portfolio pictures</h2>
+        <h2>Portfolio pictures</h2>
         <div className={styles.flexContainer}>
           {portfolioArray.map((item) => (
-            <div key={item.id} className={styles.productContainer}>
+            <div onClick={()=>router.push(`/portfolio/${item.title}`)} key={item.id} className={styles.productContainer}>
             <div className={styles.imageWrapper}>
             <Image
                 

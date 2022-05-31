@@ -7,7 +7,7 @@ import BlockContent from '@sanity/block-content-to-react'
 
 
 export default function Post({ title, body, author, data, image }) {
-  console.log('author', author, 'data', data)
+  
   let dataTrue = data.toString()
   
     const [imageUrl, setImageUrl] = useState('');

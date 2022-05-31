@@ -6,11 +6,12 @@
     margin-right: auto;
     padding-left: 16px;
     padding-right: 16px;
-    
+    color: white;
+    margin-top: 70px;
 }
 .flexContainer {
     position: relative;
-    margin-top: 50px;
+    
     display: flex;
     justify-content: space-around;
     flex-wrap: wrap;

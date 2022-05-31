@@ -25,6 +25,8 @@ export default function Blog({ posts }) {
   }, [posts]);
 
   return (
+    <div className={styles.container}>
+    
     <div className={styles.main}>
       <h1>Welcom to my sily life (Blog)</h1>
 
@@ -37,6 +39,7 @@ export default function Blog({ posts }) {
               </div>
           )): <>no data</>
       }</div>
+    </div>
     </div>
   );
 }
