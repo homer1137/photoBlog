@@ -1,5 +1,5 @@
 import React from 'react'
-import { portfolioArray } from '../../Components/PortfolioPreview/potfoloArray';
+import { portfolioArray } from '../../components/PortfolioPreview/potfoloArray';
 import Image from 'next/dist/client/image';
 import styles from '../../styles/ProjectDetail.module.css'
 
